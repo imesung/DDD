@@ -4,17 +4,16 @@ import javax.validation.constraints.Max;
 
 public class Pokemon {
 
-    private static final int MAX_NUMBER = 151;
-    private static final int MIN_NUMBER = 1;
-
-    private final int pokedexNumber;
+    private final PokedexNumber pokedexNumber;
     private final String name;
+    
 
-    public Pokemon(final int pokedexNumber, final String name) {
-        if(pokedexNumber < MIN_NUMBER || pokedexNumber > MAX_NUMBER) {
-            throw new IllegalArgumentException();
-        }
+    public Pokemon(final int pokedexNumber, String name) {
+        this(new PokedexNumber(pokedexNumber), name);
+    }
 
+    //주생성자
+    public Pokemon(final PokedexNumber pokedexNumber, final String name) {
         this.pokedexNumber = pokedexNumber;
         this.name = name;
     }
