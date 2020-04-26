@@ -6,9 +6,9 @@ public class Pokemon {
 
     private final PokedexNumber pokedexNumber;
     private final String name;
-    
+    private int captureRate;
 
-    public Pokemon(final int pokedexNumber, String name) {
+    public Pokemon(final int pokedexNumber, String name, int captureRate) {
         this(new PokedexNumber(pokedexNumber), name);
     }
 
